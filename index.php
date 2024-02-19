@@ -3,21 +3,21 @@ require_once __DIR__.'/classes/Products.php';
 require_once __DIR__.'/classes/Food.php';
 require_once __DIR__.'/classes/Toys.php';
 require_once __DIR__.'/classes/DogBed.php';
-
+https://shop-cdn-m.mediazs.com/bilder/5/400/56823_PLA_Kuschelkissen_fuer_Hundeboxen_L64_FG__1__5.jpg
 $allProduct = [];
 
-$pippo = new Food("prova",5,"dog");
-var_dump($pippo);
-$allProduct[] = $pippo;
-var_dump($allProduct);
-$pluto = new Toys("Mangia gatti",30,"dog",10,"dsajidsajdsai","http://prova.com",5,"salciccia",true);
-var_dump($pluto);
-$allProduct[] = $pluto;
-var_dump($allProduct);
-$paperino= new DogBed("",30,"",10,"","",5,"",30);
-var_dump($paperino);
+$mangime = new Food("Royal Canin Labrador",62,"dog",10,"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto, vero!","https://shop-cdn-m.mediazs.com/bilder/0/400/61151_pla_royalcanin_adulthund_labradorretriever_0.jpg",5,"12,00kg","12/10/2025","gatti");
+
+$allProduct[] = $mangime;
+
+$mangiaGatti = new Toys("Mangia gatti",30,"dog",10,"dsajidsajdsai","https://shop-cdn-m.mediazs.com/bilder/4/400/60577_pla_latexschwein_small_fg_5570_4.jpg",5,"salciccia",true);
+
+$allProduct[] = $mangiaGatti;
+
+$paperino= new DogBed("Cuccia per cani",30,"dog",1,"Cuccia per cani","https://shop-cdn-m.mediazs.com/bilder/5/400/56823_PLA_Kuschelkissen_fuer_Hundeboxen_L64_FG__1__5.jpg", 4,"Ipoallergenico",30);
+
 $allProduct[] = $paperino;
-var_dump($allProduct);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,24 +36,31 @@ var_dump($allProduct);
         </header>
         <main>
             <div class="container">
-                <ul>
+                <ul class="row list-unstyled">
                     <?php
                     foreach ($allProduct as $key => $product) {
                     ?>
-                    <li>
-                        <div class="card" style="width: 18rem;">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                <?php
-                                echo $product->name
-                                ?>
-                                </h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <div class="col-4">
+                        <li class="h-100">
+                            <div class="card h-100" style="width: 18rem;">
+                                <img src=<?php echo $product->image; ?> class="card-img-top" alt=<?php echo $product->name; ?>>
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                    <?php
+                                    echo $product->name;
+                                    ?>
+                                    </h5>
+                                    <p class="card-text">
+                                        <?php
+                                        echo $product->description;
+                                        echo get_class($product);
+                                        ?>
+                                    </p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
                             </div>
-                        </div>
-                    </li>
+                        </li>
+                    </div>
                     <?php
                     }
                     ?>
