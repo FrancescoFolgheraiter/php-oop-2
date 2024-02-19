@@ -3,7 +3,7 @@ require_once __DIR__.'/classes/Products.php';
 require_once __DIR__.'/classes/Food.php';
 require_once __DIR__.'/classes/Toys.php';
 require_once __DIR__.'/classes/DogBed.php';
-https://shop-cdn-m.mediazs.com/bilder/5/400/56823_PLA_Kuschelkissen_fuer_Hundeboxen_L64_FG__1__5.jpg
+
 $allProduct = [];
 
 $mangime = new Food("Royal Canin Labrador",62,"dog",10,"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto, vero!","https://shop-cdn-m.mediazs.com/bilder/0/400/61151_pla_royalcanin_adulthund_labradorretriever_0.jpg",5,"12,00kg","12/10/2025","gatti");
@@ -53,10 +53,24 @@ $allProduct[] = $paperino;
                                     <p class="card-text">
                                         <?php
                                         echo $product->description;
-                                        echo get_class($product);
+                                        ?>
+                                        <hr>
+                                        <?php
+                                        echo "Tipo: ".get_class($product);
                                         ?>
                                     </p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    <div class="d-flex justify-content-between ">
+                                        <div>
+                                            <?php
+                                            echo "€".$product->price;
+                                            ?>
+                                        </div>
+                                        <div>
+                                            <?php
+                                            echo "Categoria: ".$product->category;
+                                            ?>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </li>
