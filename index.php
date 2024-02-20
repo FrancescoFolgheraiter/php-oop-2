@@ -4,18 +4,22 @@ require_once __DIR__.'/classes/Food.php';
 require_once __DIR__.'/classes/Toys.php';
 require_once __DIR__.'/classes/DogBed.php';
 require_once __DIR__.'/classes/Category.php';
+//inizializzazione oggetti cane e gatto
+$dog = new Category("dog");
+$cat = new Category("cat");
+
 
 $allProduct = [];
 
-$mangime = new Food("Royal Canin Labrador",62,"dog",10,"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto, vero!","https://shop-cdn-m.mediazs.com/bilder/0/400/61151_pla_royalcanin_adulthund_labradorretriever_0.jpg",5,"12,00kg","12/10/2025","gatti");
+$mangime = new Food("Royal Canin Labrador",62,$dog,10,"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto, vero!","https://shop-cdn-m.mediazs.com/bilder/0/400/61151_pla_royalcanin_adulthund_labradorretriever_0.jpg",5,"12,00kg","12/10/2025","gatti");
 
 $allProduct[] = $mangime;
 
-$mangiaGatti = new Toys("Mangia gatti",30,"dog",10,"dsajidsajdsai","https://shop-cdn-m.mediazs.com/bilder/4/400/60577_pla_latexschwein_small_fg_5570_4.jpg",5,"salciccia",true);
+$mangiaGatti = new Toys("Mangia gatti",30,$dog,10,"dsajidsajdsai","https://shop-cdn-m.mediazs.com/bilder/4/400/60577_pla_latexschwein_small_fg_5570_4.jpg",5,"salciccia",true);
 
 $allProduct[] = $mangiaGatti;
 
-$paperino= new DogBed("Cuccia per cani",30,"dog",1,"Cuccia per cani","https://shop-cdn-m.mediazs.com/bilder/5/400/56823_PLA_Kuschelkissen_fuer_Hundeboxen_L64_FG__1__5.jpg", 4,"Ipoallergenico",30);
+$paperino= new DogBed("Cuccia per cani",30,$dog ,1,"Cuccia per cani","https://shop-cdn-m.mediazs.com/bilder/5/400/56823_PLA_Kuschelkissen_fuer_Hundeboxen_L64_FG__1__5.jpg", 4,"Ipoallergenico",30);
 
 $allProduct[] = $paperino;
 
@@ -32,7 +36,7 @@ $allProduct[] = $paperino;
     <body>
         <header>
             <h1 class="text-center">
-                Zoo114
+                Animals 114
             </h1>
         </header>
         <main>
@@ -68,7 +72,7 @@ $allProduct[] = $paperino;
                                         </div>
                                         <div>
                                             <?php
-                                            echo "Categoria: ".$product->category;
+                                            echo "Categoria: ".$product->category->getName();
                                             ?>
                                         </div>
                                     </div>

@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__.'/../traits/HasName.php';
+require_once __DIR__.'/Category.php';
 class Product{
    use HasName;
 
@@ -11,7 +12,7 @@ class Product{
    public $description;
    public $raiting;
 
-   function __construct($name, int $price, string $category, int $stock = 0, string $description = "",string $image = "immagine non trovata", int $raiting = 0){
+   function __construct($name, int $price, Category $category, int $stock = 0, string $description = "",string $image = "immagine non trovata", int $raiting = 0){
     $this->name = $name;
     $this->image = $image;
     $this->price = $price;
