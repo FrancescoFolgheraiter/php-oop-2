@@ -11,7 +11,12 @@ trait HasName {
 
     public function setName($name)
     {
-        $this->name = $name;
+        if (is_string($name)) {
+            $this->name =$name;
+        }
+        else {
+            throw new Exception('Name non è una stringa');
+        }
     }
 
 }

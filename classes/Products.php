@@ -13,7 +13,7 @@ class Product{
    public $raiting;
 
    function __construct($name, int $price, Category $category, int $stock = 0, string $description = "",string $image = "immagine non trovata", int $raiting = 0){
-    $this->name = $name;
+    $this->setName($name) ;
     $this->image = $image;
     $this->price = $price;
     $this->category = $category;
