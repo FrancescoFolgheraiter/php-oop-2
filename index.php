@@ -3,6 +3,7 @@ require_once __DIR__.'/classes/Products.php';
 require_once __DIR__.'/classes/Food.php';
 require_once __DIR__.'/classes/Toys.php';
 require_once __DIR__.'/classes/DogBed.php';
+require_once __DIR__.'/classes/Category.php';
 
 $allProduct = [];
 
@@ -43,11 +44,11 @@ $allProduct[] = $paperino;
                     <div class="col-4">
                         <li class="h-100">
                             <div class="card h-100" style="width: 18rem;">
-                                <img src=<?php echo $product->image; ?> class="card-img-top" alt=<?php echo $product->name; ?>>
+                                <img src=<?php echo $product->image; ?> class="card-img-top" alt=<?php echo $product->getName(); ?>>
                                 <div class="card-body">
                                     <h5 class="card-title">
                                     <?php
-                                    echo $product->name;
+                                    echo $product->getName();
                                     ?>
                                     </h5>
                                     <p class="card-text">
